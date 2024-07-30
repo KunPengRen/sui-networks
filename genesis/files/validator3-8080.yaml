@@ -1,0 +1,139 @@
+protocol-key-pair:
+  value: MBb6AvDUTTT7yyxEXNmW6URhqS3ka/gW4W6udSZzQg0=
+worker-key-pair:
+  value: AM43PctawNkGAEkB6935jdc6Hlaqk8t/5uzv1lkY4GM9
+account-key-pair:
+  value: ABK5zfPoZDd7mKbmKQZjvOErHr5QE8KARR1v59+ISNO7
+network-key-pair:
+  value: AMRM0bAscTbpubta3tE2fR5ct5MTay9sNygWdGzGRqJL
+db-path: /opt/sui/db/authorities_db
+network-address: /ip4/0.0.0.0/tcp/8080/http
+json-rpc-address: 0.0.0.0:9000
+enable-experimental-rest-api: true
+metrics-address: 0.0.0.0:9184
+admin-interface-port: 1337
+consensus-config:
+  address: /ip4/127.0.0.1/tcp/8083/http
+  db-path: /opt/sui/db/consensus_db
+  internal-worker-address: null
+  max-pending-transactions: null
+  max-submit-position: null
+  submit-delay-step-override-millis: null
+  narwhal-config:
+    header_num_of_batches_threshold: 32
+    max_header_num_of_batches: 1000
+    max_header_delay: 2000ms
+    min_header_delay: 500ms
+    gc_depth: 50
+    sync_retry_delay: 5000ms
+    sync_retry_nodes: 3
+    batch_size: 5000000
+    max_batch_delay: 100ms
+    max_concurrent_requests: 500000
+    prometheus_metrics:
+      socket_addr: /ip4/127.0.0.1/tcp/45301/http
+    network_admin_server:
+      primary_network_admin_server_port: 46611
+      worker_network_admin_server_base_port: 36921
+    anemo:
+      send_certificate_rate_limit: null
+      report_batch_rate_limit: null
+      request_batches_rate_limit: null
+enable-index-processing: true
+jsonrpc-server-type: null
+grpc-load-shed: null
+grpc-concurrency-limit: 20000000000
+p2p-config:
+  listen-address: 0.0.0.0:8084
+  external-address: /dns/validator3/udp/8084
+  state-sync:
+    checkpoint-content-timeout-ms: 10000
+genesis:
+  genesis-file-location: /opt/sui/config/genesis.blob
+authority-store-pruning-config:
+  num-latest-epoch-dbs-to-retain: 3
+  epoch-db-pruning-period-secs: 3600
+  num-epochs-to-retain: 0
+  max-checkpoints-in-batch: 10
+  max-transactions-in-batch: 1000
+end-of-epoch-broadcast-channel-capacity: 128
+checkpoint-executor-config:
+  checkpoint-execution-max-concurrency: 200
+  local-execution-timeout-sec: 30
+db-checkpoint-config:
+  perform-db-checkpoints-at-epoch-end: false
+indirect-objects-threshold: 18446744073709551615
+expensive-safety-check-config:
+  enable-epoch-sui-conservation-check: false
+  enable-deep-per-tx-sui-conservation-check: false
+  force-disable-epoch-sui-conservation-check: false
+  enable-state-consistency-check: false
+  force-disable-state-consistency-check: false
+  enable-secondary-index-checks: false
+  enable-move-vm-paranoid-checks: false
+transaction-deny-config:
+  package-publish-disabled: false
+  package-upgrade-disabled: false
+  shared-object-disabled: false
+  user-transaction-disabled: false
+  receiving-objects-disabled: false
+  zklogin-sig-disabled: false
+  zklogin-disabled-providers: []
+certificate-deny-config: {}
+state-debug-dump-config: {}
+state-archive-write-config:
+  concurrency: 0
+  use-for-pruning-watermark: false
+state-archive-read-config: []
+state-snapshot-write-config:
+  concurrency: 0
+indexer-max-subscriptions: null
+transaction-kv-store-read-config:
+  base-url: ''
+jwk-fetch-interval-seconds: 3600
+zklogin-oauth-providers:
+  Mainnet:
+  - Apple
+  - Facebook
+  - Google
+  - Twitch
+  Testnet:
+  - Apple
+  - Facebook
+  - Google
+  - Twitch
+  Unknown:
+  - Apple
+  - AwsTenant-region:us-east-1-tenant_id:us-east-1_LPSLCkC3A
+  - Credenza3
+  - Facebook
+  - Google
+  - Kakao
+  - KarrierOne
+  - Microsoft
+  - Slack
+  - TestIssuer
+  - Twitch
+authority-overload-config:
+  max-txn-age-in-queue:
+    secs: 1
+    nanos: 0
+  overload-monitor-interval:
+    secs: 10
+    nanos: 0
+  execution-queue-latency-soft-limit:
+    secs: 1
+    nanos: 0
+  execution-queue-latency-hard-limit:
+    secs: 10
+    nanos: 0
+  max-load-shedding-percentage: 95
+  min-load-shedding-percentage-above-hard-limit: 50
+  safe-transaction-ready-rate: 100
+  check-system-overload-at-signing: true
+  max-transaction-manager-queue-length: 100000
+  max-transaction-manager-per-object-queue-length: 100
+execution-cache: passthrough-cache
+state-accumulator-v2: true
+enable-soft-bundle: true
+epoch_duration_ms: 120000
