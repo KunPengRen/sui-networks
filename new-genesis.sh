@@ -21,4 +21,4 @@ mkdir "$DIR"
 echo "$DIR directory created."
 
 
-./generate.py --genesis-template compose-validators.yaml --target-directory "$DIR"
+./generate_sbip.py --genesis-template compose-validators_sbip.yaml --target-directory "$DIR"

@@ -1,11 +1,11 @@
 protocol-key-pair:
-  value: Dua0ONcmCugdogCE7+Pi/bk0BCCvzjKskfhpiUPV6vc=
+  value: M4PUWMnzMGQJMJwcqXQcE/TaCwXdddWDwm5ucUmPRdE=
 worker-key-pair:
-  value: ADr7ky5eW/TSbXjzochHhU4xKvWS9PMLaBs54fMI28m7
+  value: ADnFKIv3M2SdpcztjlVnuLQJabThV5yELDs6wstmPdk5
 account-key-pair:
-  value: AH+DeMlc21t2srAL2AnitYqdENm0LakjkCG08RNkg58c
+  value: AIBfr1nA5+b6uULquCp62tInfeZ/HUyz5jkXL8Wx6K/8
 network-key-pair:
-  value: AJglk0jYU0MGeUeYSH3qFdriVlIY/1oAtafoACUCaEJU
+  value: ALlKp95J+OyKOWr71+/hN8WySfZ6zKuLWtkMUMkUVdGr
 db-path: /opt/sui/db/authorities_db
 network-address: /ip4/0.0.0.0/tcp/8080/http
 json-rpc-address: 0.0.0.0:9000
@@ -31,10 +31,10 @@ consensus-config:
     max_batch_delay: 100ms
     max_concurrent_requests: 500000
     prometheus_metrics:
-      socket_addr: /ip4/127.0.0.1/tcp/36757/http
+      socket_addr: /ip4/127.0.0.1/tcp/43859/http
     network_admin_server:
-      primary_network_admin_server_port: 34587
-      worker_network_admin_server_base_port: 43595
+      primary_network_admin_server_port: 45097
+      worker_network_admin_server_base_port: 45611
     anemo:
       send_certificate_rate_limit: null
       report_batch_rate_limit: null
@@ -44,8 +44,8 @@ jsonrpc-server-type: null
 grpc-load-shed: null
 grpc-concurrency-limit: 20000000000
 p2p-config:
-  listen-address: 0.0.0.0:8084
-  external-address: /dns/validator4/udp/8084
+  listen-address: 10.10.10.238:8084
+  external-address: /ip4/10.10.10.238/udp/8084
   state-sync:
     checkpoint-content-timeout-ms: 10000
 genesis:

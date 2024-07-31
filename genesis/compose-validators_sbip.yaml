@@ -17,18 +17,18 @@ validator_config_info:
 - commission_rate: 0
   consensus_address: /ip4/127.0.0.1/tcp/8083/http
   gas_price: 1000
-  genesis:
-    genesis-file-location: /opt/sui/genesis.blob
-  name: 10.10.10.237
+  name: validator1
   narwhal_primary_address: /ip4/10.10.10.237/udp/8081
   narwhal_worker_address: /ip4/10.10.10.237/udp/8082
   network_address: /ip4/10.10.10.237/tcp/8080/http
   p2p_address: /ip4/10.10.10.237/udp/8084
   stake: 20000000000000000
+  genesis:
+    genesis-file-location: /opt/sui/genesis.blob
 - commission_rate: 0
   consensus_address: /ip4/127.0.0.1/tcp/8083/http
   gas_price: 1000
-  name: 10.10.10.239
+  name: validator2
   narwhal_primary_address: /ip4/10.10.10.239/udp/8081
   narwhal_worker_address: /ip4/10.10.10.239/udp/8082
   network_address: /ip4/10.10.10.239/tcp/8080/http
@@ -37,7 +37,7 @@ validator_config_info:
 - commission_rate: 0
   consensus_address: /ip4/127.0.0.1/tcp/8083/http
   gas_price: 1000
-  name: 10.10.10.244
+  name: validator3
   narwhal_primary_address: /ip4/10.10.10.244/udp/8081
   narwhal_worker_address: /ip4/10.10.10.244/udp/8082
   network_address: /ip4/10.10.10.244/tcp/8080/http
@@ -46,7 +46,7 @@ validator_config_info:
 - commission_rate: 0
   consensus_address: /ip4/127.0.0.1/tcp/8083/http
   gas_price: 1000
-  name: 10.10.10.238
+  name: validator4
   narwhal_primary_address: /ip4/10.10.10.238/udp/8081
   narwhal_worker_address: /ip4/10.10.10.238/udp/8082
   network_address: /ip4/10.10.10.238/tcp/8080/http
