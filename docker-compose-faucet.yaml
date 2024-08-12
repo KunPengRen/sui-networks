@@ -20,6 +20,10 @@ services:
         "/usr/local/bin/sui-faucet",
         "--host-ip",
         "0.0.0.0",
+        "--amount",
+        "1000000000000",
+        "--num-coins",
+        "100",
         "--write-ahead-log",
         "./faucet.log"
       ]
