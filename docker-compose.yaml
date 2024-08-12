@@ -148,10 +148,105 @@ services:
       options:
         max-file: "10"
         max-size: "1g"
-  faucet:
+    ports:
+      - "9110:9000"
+  fullnode2:
+    networks:
+      sui-network:
+        ipv4_address: 10.0.0.16
+    image: mysten/sui-node:sui-v1.29.0-release
+    hostname: fullnode2
+    container_name: fullnode2
+    environment:
+      - RUST_BACKTRACE=1
+      - RUST_LOG=info,sui_core=debug,sui_network=debug,sui_node=debug,narwhal=debug,narwhal-primary::helper=info,jsonrpsee=error
+      - RPC_WORKER_THREAD=12
+      - NEW_CHECKPOINT_WARNING_TIMEOUT_MS=30000
+      - NEW_CHECKPOINT_PANIC_TIMEOUT_MS=60000
+    volumes:
+      - ./genesis/static/fullnode.yaml:/opt/sui/config/fullnode.yaml:ro
+      - ./genesis/files/genesis.blob:/opt/sui/config/genesis.blob:ro
+      - /tmp/sui/db6:/opt/sui/db:rw
+    command:
+      [
+        "/usr/local/bin/sui-node",
+        "--config-path",
+        "/opt/sui/config/fullnode.yaml",
+      ]
+    restart: on-failure
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "1g"
+    ports:
+      - "9111:9000"
+  fullnode3:
+    networks:
+      sui-network:
+        ipv4_address: 10.0.0.17
+    image: mysten/sui-node:sui-v1.29.0-release
+    hostname: fullnode3
+    container_name: fullnode3
+    environment:
+      - RUST_BACKTRACE=1
+      - RUST_LOG=info,sui_core=debug,sui_network=debug,sui_node=debug,narwhal=debug,narwhal-primary::helper=info,jsonrpsee=error
+      - RPC_WORKER_THREAD=12
+      - NEW_CHECKPOINT_WARNING_TIMEOUT_MS=30000
+      - NEW_CHECKPOINT_PANIC_TIMEOUT_MS=60000
+    volumes:
+      - ./genesis/static/fullnode.yaml:/opt/sui/config/fullnode.yaml:ro
+      - ./genesis/files/genesis.blob:/opt/sui/config/genesis.blob:ro
+      - /tmp/sui/db7:/opt/sui/db:rw
+    command:
+      [
+        "/usr/local/bin/sui-node",
+        "--config-path",
+        "/opt/sui/config/fullnode.yaml",
+      ]
+    restart: on-failure
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "1g"   
+    ports:
+      - "9112:9000"
+  fullnode4:
     networks:
       sui-network:
         ipv4_address: 10.0.0.18
+    image: mysten/sui-node:sui-v1.29.0-release
+    hostname: fullnode4
+    container_name: fullnode4
+    environment:
+      - RUST_BACKTRACE=1
+      - RUST_LOG=info,sui_core=debug,sui_network=debug,sui_node=debug,narwhal=debug,narwhal-primary::helper=info,jsonrpsee=error
+      - RPC_WORKER_THREAD=12
+      - NEW_CHECKPOINT_WARNING_TIMEOUT_MS=30000
+      - NEW_CHECKPOINT_PANIC_TIMEOUT_MS=60000
+    volumes:
+      - ./genesis/static/fullnode.yaml:/opt/sui/config/fullnode.yaml:ro
+      - ./genesis/files/genesis.blob:/opt/sui/config/genesis.blob:ro
+      - /tmp/sui/db8:/opt/sui/db:rw
+    command:
+      [
+        "/usr/local/bin/sui-node",
+        "--config-path",
+        "/opt/sui/config/fullnode.yaml",
+      ]
+    restart: on-failure
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "1g"    
+    ports:
+      - "9113:9000" 
+  faucet:
+    networks:
+      sui-network:
+        ipv4_address: 10.0.0.19
     image: mysten/sui-tools:sui-v1.29.0-release
     container_name: faucet
     hostname: faucet

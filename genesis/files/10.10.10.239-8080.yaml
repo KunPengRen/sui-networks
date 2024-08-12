@@ -1,12 +1,12 @@
 protocol-key-pair:
-  value: DGYzeSW1IZ3BlmWFUI2rr8sezJ8m6MxU6q19eYWyBak=
+  value: OZ8zNM6hG0bnigcwNjGc9oK4nVAtqlyZjBQOARSzbp4=
 worker-key-pair:
-  value: AP16GHUyqmP0jMYAk8edUE1rBY8Vgx/D6MAyCuc4Aiav
+  value: AGvmm+X6SV93DwUZHGZwqAj1iEINUfvOQXyIgD9+NGri
 account-key-pair:
-  value: AAYPDnzLlIOWIntNYE6rqv+Cm4dJImcUoYAVl7gk5KiL
+  value: AFmsJencoOdL4ine3G4RKM4UM5c3FYCMYao6YIBIVOgW
 network-key-pair:
-  value: AEa2Slq3g5g5vXU1SKshTxKrJ4b1rel1XWPxB/oG6DBG
-db-path: /opt/sui/db/authorities_db
+  value: ACVLJF3TUP0rRO+G8hVWD1olNidwi2VnYGVgdGV9UsVm
+db-path: /data/kunpeng/sui-test/sui/db/authorities_db
 network-address: /ip4/0.0.0.0/tcp/8080/http
 json-rpc-address: 0.0.0.0:9000
 enable-experimental-rest-api: true
@@ -14,7 +14,7 @@ metrics-address: 0.0.0.0:9184
 admin-interface-port: 1337
 consensus-config:
   address: /ip4/127.0.0.1/tcp/8083/http
-  db-path: /opt/sui/db/consensus_db
+  db-path: /data/kunpeng/sui-test/sui/db/consensus_db
   internal-worker-address: null
   max-pending-transactions: null
   max-submit-position: null
@@ -31,10 +31,10 @@ consensus-config:
     max_batch_delay: 100ms
     max_concurrent_requests: 500000
     prometheus_metrics:
-      socket_addr: /ip4/127.0.0.1/tcp/34233/http
+      socket_addr: /ip4/127.0.0.1/tcp/36701/http
     network_admin_server:
-      primary_network_admin_server_port: 40635
-      worker_network_admin_server_base_port: 34613
+      primary_network_admin_server_port: 35485
+      worker_network_admin_server_base_port: 43851
     anemo:
       send_certificate_rate_limit: null
       report_batch_rate_limit: null
@@ -49,7 +49,7 @@ p2p-config:
   state-sync:
     checkpoint-content-timeout-ms: 10000
 genesis:
-  genesis-file-location: /opt/sui/config/genesis.blob
+  genesis-file-location: /users/kunpeng/sui-networks/genesis/files/genesis.blob
 authority-store-pruning-config:
   num-latest-epoch-dbs-to-retain: 3
   epoch-db-pruning-period-secs: 3600

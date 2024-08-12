@@ -4,10 +4,10 @@ validator:
   json-rpc-address: 0.0.0.0:9000
   admin-interface-port: 1337
   genesis:
-    genesis-file-location: /opt/sui/config/genesis.blob
-  db-path: /opt/sui/db/authorities_db
+    genesis-file-location: /users/kunpeng/sui-networks/genesis/files/genesis.blob
+  db-path: /data/kunpeng/sui-test/sui/db/authorities_db
   consensus-config:
-    db-path: /opt/sui/db/consensus_db
+    db-path: /data/kunpeng/sui-test/sui/db/consensus_db
     narwhal-config:
       max_header_delay: 2000ms
   expensive-safety-check-config:

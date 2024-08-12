@@ -1,11 +1,11 @@
 protocol-key-pair:
-  value: Ch6MDh5y9VM2JzNXnsXkx02w+5wwRH5GbjfLZOEUwnc=
+  value: KhuDy/jZLUyoSvRtdwBJhOm1lVI3kZSb+2wcZZw1h3I=
 worker-key-pair:
-  value: AOT31LVndCCWnjBrQmKKTRGtgz5AKPGavkEP8QYg89MS
+  value: ACm9Rjfzu4iXfYzqVprQ1MKFRqOKlqyvLUOXPFtE6qSx
 account-key-pair:
-  value: AKbU3mxHAvj46SA96dQTkGAXn2mLrsey4vkMxV2uqzv7
+  value: AGe+WQ9rKyRriARK968UkrW3Z4xA9UxnLCu6wvFHZ7s+
 network-key-pair:
-  value: AItjWtA129k2oveGj3mhkVUBy7LXvKPYvm9482f43Dtm
+  value: ANvBTCAPw6+X/Svf0SJCF4yiDV9mR5jK04nY3YjirvOr
 db-path: /data/kunpeng/sui-test/sui/db/authorities_db
 network-address: /ip4/0.0.0.0/tcp/8080/http
 json-rpc-address: 0.0.0.0:9000
@@ -31,21 +31,22 @@ consensus-config:
     max_batch_delay: 100ms
     max_concurrent_requests: 500000
     prometheus_metrics:
-      socket_addr: /ip4/127.0.0.1/tcp/43037/http
+      socket_addr: /ip4/127.0.0.1/tcp/35971/http
     network_admin_server:
-      primary_network_admin_server_port: 35843
-      worker_network_admin_server_base_port: 42489
+      primary_network_admin_server_port: 41119
+      worker_network_admin_server_base_port: 45909
     anemo:
       send_certificate_rate_limit: null
       report_batch_rate_limit: null
       request_batches_rate_limit: null
+enable-event-processing: false
 enable-index-processing: true
-jsonrpc-server-type: null
+websocket-only: false
 grpc-load-shed: null
 grpc-concurrency-limit: 20000000000
 p2p-config:
-  listen-address: 10.10.10.244:8084
-  external-address: /ip4/10.10.10.244/udp/8084
+  listen-address: 10.10.10.237:8084
+  external-address: /ip4/10.10.10.237/udp/8084
   state-sync:
     checkpoint-content-timeout-ms: 10000
 genesis:
@@ -104,15 +105,10 @@ zklogin-oauth-providers:
   - Twitch
   Unknown:
   - Apple
-  - AwsTenant-region:us-east-1-tenant_id:us-east-1_LPSLCkC3A
-  - Credenza3
   - Facebook
   - Google
   - Kakao
-  - KarrierOne
-  - Microsoft
   - Slack
-  - TestIssuer
   - Twitch
 authority-overload-config:
   max-txn-age-in-queue:
@@ -131,9 +127,4 @@ authority-overload-config:
   min-load-shedding-percentage-above-hard-limit: 50
   safe-transaction-ready-rate: 100
   check-system-overload-at-signing: true
-  max-transaction-manager-queue-length: 100000
-  max-transaction-manager-per-object-queue-length: 100
-execution-cache: passthrough-cache
-state-accumulator-v2: true
-enable-soft-bundle: true
 epoch_duration_ms: 120000

@@ -1,0 +1,34 @@
+version: "3"
+
+services: 
+  faucet:
+    image: mysten/sui-tools:sui-v1.29.0-release
+    container_name: faucet
+    hostname: faucet
+    environment:
+      - RUST_BACKTRACE=1
+      - RUST_LOG=info,sui_core=debug,sui_network=debug,sui_node=debug,narwhal=debug,narwhal-primary::helper=info,jsonrpsee=error
+      - RPC_WORKER_THREAD=12
+      - NEW_CHECKPOINT_WARNING_TIMEOUT_MS=30000
+      - NEW_CHECKPOINT_PANIC_TIMEOUT_MS=60000
+    volumes:
+      - ./genesis/static/client.yaml:/root/.sui/sui_config/client.yaml:ro
+      - ./genesis/static/sui.keystore:/root/.sui/sui_config/sui.keystore:ro
+      # - ./genesis/files/genesis.blob:/opt/sui/config/genesis.blob:ro
+    command:
+      [
+        "/usr/local/bin/sui-faucet",
+        "--host-ip",
+        "0.0.0.0",
+        "--write-ahead-log",
+        "./faucet.log"
+      ]
+    restart: on-failure
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "1g"
+    ports:
+      - "5003:5003"
+

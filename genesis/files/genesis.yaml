@@ -19,11 +19,11 @@ validator_config_info:
   gas_price: 1000
   genesis:
     genesis-file-location: /opt/sui/genesis.blob
-  name: 10.10.10.237
-  narwhal_primary_address: /ip4/10.10.10.237/udp/8081
-  narwhal_worker_address: /ip4/10.10.10.237/udp/8082
-  network_address: /ip4/10.10.10.237/tcp/8080/http
-  p2p_address: /ip4/10.10.10.237/udp/8084
+  name: 10.10.10.243
+  narwhal_primary_address: /ip4/10.10.10.243/udp/8081
+  narwhal_worker_address: /ip4/10.10.10.243/udp/8082
+  network_address: /ip4/10.10.10.243/tcp/8080/http
+  p2p_address: /ip4/10.10.10.243/udp/8084
   stake: 20000000000000000
 - commission_rate: 0
   consensus_address: /ip4/127.0.0.1/tcp/8083/http

@@ -1,11 +1,11 @@
 protocol-key-pair:
-  value: Ch6MDh5y9VM2JzNXnsXkx02w+5wwRH5GbjfLZOEUwnc=
+  value: OXerm4FEosSQaiyoOoIAR2RBifM+V8THYTFqiVdi6yg=
 worker-key-pair:
-  value: AOT31LVndCCWnjBrQmKKTRGtgz5AKPGavkEP8QYg89MS
+  value: AAYR8ZnBb0QaaeFGoORQcrWurwFsHvcoRd8pII9VXM8e
 account-key-pair:
-  value: AKbU3mxHAvj46SA96dQTkGAXn2mLrsey4vkMxV2uqzv7
+  value: AI8E9pkk90wqzaQiGFW5S5CF7W2zo8Mbi0rsWuVaOl4y
 network-key-pair:
-  value: AItjWtA129k2oveGj3mhkVUBy7LXvKPYvm9482f43Dtm
+  value: AE62/IngwBlNcMJHkHNM4PHDqOqdY2O6gmSu2o51D5/S
 db-path: /data/kunpeng/sui-test/sui/db/authorities_db
 network-address: /ip4/0.0.0.0/tcp/8080/http
 json-rpc-address: 0.0.0.0:9000
@@ -31,10 +31,10 @@ consensus-config:
     max_batch_delay: 100ms
     max_concurrent_requests: 500000
     prometheus_metrics:
-      socket_addr: /ip4/127.0.0.1/tcp/43037/http
+      socket_addr: /ip4/127.0.0.1/tcp/45035/http
     network_admin_server:
-      primary_network_admin_server_port: 35843
-      worker_network_admin_server_base_port: 42489
+      primary_network_admin_server_port: 32815
+      worker_network_admin_server_base_port: 34655
     anemo:
       send_certificate_rate_limit: null
       report_batch_rate_limit: null
@@ -44,8 +44,8 @@ jsonrpc-server-type: null
 grpc-load-shed: null
 grpc-concurrency-limit: 20000000000
 p2p-config:
-  listen-address: 10.10.10.244:8084
-  external-address: /ip4/10.10.10.244/udp/8084
+  listen-address: 10.10.10.243:8084
+  external-address: /ip4/10.10.10.243/udp/8084
   state-sync:
     checkpoint-content-timeout-ms: 10000
 genesis:

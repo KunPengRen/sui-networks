@@ -1,12 +1,12 @@
 protocol-key-pair:
-  value: Ch6MDh5y9VM2JzNXnsXkx02w+5wwRH5GbjfLZOEUwnc=
+  value: KPNp+BOB9tvjVCjlacXND0LlEXfuQV0ciiyVi+clycg=
 worker-key-pair:
-  value: AOT31LVndCCWnjBrQmKKTRGtgz5AKPGavkEP8QYg89MS
+  value: ANygAOXExBEBOe0MZBy3F0a9a597ZXmRJ18Mg+W9UcEm
 account-key-pair:
-  value: AKbU3mxHAvj46SA96dQTkGAXn2mLrsey4vkMxV2uqzv7
+  value: AEO/wrJHZEdXlIVwUbgKwsluKjap0Pk4qRhwCGlRTDx6
 network-key-pair:
-  value: AItjWtA129k2oveGj3mhkVUBy7LXvKPYvm9482f43Dtm
-db-path: /data/kunpeng/sui-test/sui/db/authorities_db
+  value: AL2PGkjddoAE9Ant9x3XU/6q0tN0CeEijtfowdOmnmnQ
+db-path: /opt/sui/db/authorities_db
 network-address: /ip4/0.0.0.0/tcp/8080/http
 json-rpc-address: 0.0.0.0:9000
 enable-experimental-rest-api: true
@@ -14,7 +14,7 @@ metrics-address: 0.0.0.0:9184
 admin-interface-port: 1337
 consensus-config:
   address: /ip4/127.0.0.1/tcp/8083/http
-  db-path: /data/kunpeng/sui-test/sui/db/consensus_db
+  db-path: /opt/sui/db/consensus_db
   internal-worker-address: null
   max-pending-transactions: null
   max-submit-position: null
@@ -31,10 +31,10 @@ consensus-config:
     max_batch_delay: 100ms
     max_concurrent_requests: 500000
     prometheus_metrics:
-      socket_addr: /ip4/127.0.0.1/tcp/43037/http
+      socket_addr: /ip4/127.0.0.1/tcp/41133/http
     network_admin_server:
-      primary_network_admin_server_port: 35843
-      worker_network_admin_server_base_port: 42489
+      primary_network_admin_server_port: 45915
+      worker_network_admin_server_base_port: 43003
     anemo:
       send_certificate_rate_limit: null
       report_batch_rate_limit: null
@@ -44,12 +44,12 @@ jsonrpc-server-type: null
 grpc-load-shed: null
 grpc-concurrency-limit: 20000000000
 p2p-config:
-  listen-address: 10.10.10.244:8084
-  external-address: /ip4/10.10.10.244/udp/8084
+  listen-address: 0.0.0.0:8084
+  external-address: /dns/validator3/udp/8084
   state-sync:
     checkpoint-content-timeout-ms: 10000
 genesis:
-  genesis-file-location: /users/kunpeng/sui-networks/genesis/files/genesis.blob
+  genesis-file-location: /opt/sui/config/genesis.blob
 authority-store-pruning-config:
   num-latest-epoch-dbs-to-retain: 3
   epoch-db-pruning-period-secs: 3600

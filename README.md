@@ -30,3 +30,14 @@ git checkout releases/sui-v1.19.0-release
 cargo build --bin sui
 ```
 you can also use `sui-network/Dockerfile` for building genesis
+
+
+
+## Run 4 nodes network on sbip cluster
+
+```
+python3 network.py start
+python3 network.py stop
+```
+
+Noted: faucet service always is running on 10.10.10.239:5003, so don't need to run again.
